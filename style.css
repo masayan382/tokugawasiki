@@ -1,0 +1,139 @@
+/*============================== 
+base
+==============================*/
+
+html {
+	font-size: 62.5%;
+}
+body {
+	background: #fff;
+	color: #454552;
+	font-size: 1.6rem;
+}
+
+/*============================== 
+main
+==============================*/
+header {
+	background-color: #000;
+	color: #fff;
+}
+h1 {
+	padding: 20px 0 20px 0;
+	margin: 0;
+}
+/*============================== 
+main
+==============================*/
+.main-wrapper {
+	display: flex;
+	position: relative;
+}
+@media all and (max-width: 500px) {
+	.main-wrapper {
+		display: block;
+	}
+}
+.main-column {
+	height: 33vh;
+	width: 100%;
+	text-align: center;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	color: #fff;
+}
+.army-info {
+	/* margin-bottom: 25%; */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+}
+
+.main-column.east {
+	background-color: #e85a70;
+	position: relative;
+}
+.main-column.west {
+	background: #4ea1d5;
+	position: relative;
+}
+
+.diffrence {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background-color: #fff;
+	color: #454552;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	display: inline-block;
+	line-height: 100px;
+	text-align: center;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+/*============================== 
+content
+==============================*/
+.container {
+	background-color: #fff;
+	display: flex;
+	justify-content: space-between;
+}
+.west-wrapper {
+	width: 50%;
+	padding-right: 60px;
+}
+@media screen and (max-width: 500px) {
+	.west-wrapper {
+		padding-right: 0px;
+	}
+}
+.east-wrapper {
+	width: 50%;
+	padding-left: 80px;
+}
+@media screen and (max-width: 500px) {
+	.east-wrapper {
+		padding-right: 0px;
+	}
+}
+
+.legion-card {
+	background-color: #fff;
+	display: inline-flex;
+	width: 180px;
+	cursor: pointer;
+	margin: 5px;
+	opacity: 0.3;
+	box-sizing: border-box;
+	border: 1px solid #454552;
+}
+.legion-card p {
+	margin-top: 0;
+	margin-bottom: 0rem;
+}
+.legion-content {
+	padding: 5px 10px;
+}
+.legion-card.is-active {
+	opacity: 1;
+	border: 1px solid #454552;
+}
+
+/*============================== 
+footer
+==============================*/
+footer {
+	background-color: #454552;
+	color: #fff;
+}

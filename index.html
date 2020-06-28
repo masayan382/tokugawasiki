@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>徳川式電脳算術機</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"
+    integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="./style.css">
+  <script src="dist/index.js" defer></script>
+</head>
+
+<body>
+  <!-- モーダル -->
+  <div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">算術ルール</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div><!-- /.modal-header -->
+        <div class="modal-body">
+          <p>これは東軍（徳川家康サイド）から見た算術機です。自陣にどの武将が加われば何万の兵を率いれられるか計算できます。</p>
+          <p>兵力数がきわどい場合は西軍側の何人かの武将も東軍へ引き入れることを検討しましょう。</p>
+        </div><!-- /.modal-body -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+        </div><!-- /.modal-footer -->
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  <!-- ここまで -->
+  <header>
+    <h1 class="text-center"><img src="./img/t.png" width="60px">徳川式電脳算術機</h1>
+  </header>
+  <div class="mainvisual">
+    <div class="main-wrapper">
+      <div class="main-column west">
+        <div class="army-info">
+          <h2>西軍兵力数</h2>
+          <div class="score">
+            <div class="score-west">
+              <div class="score-west-number">0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-column east">
+        <div class="army-info">
+          <h2>東軍兵力数</h2>
+          <div class="score">
+            <div class="score-east">
+              <div class="score-east-number">0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="diffrence">VS</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!--------------------------------------------- 西軍------------------------------------- -->
+    <div class="west-wrapper">
+      <h2 class="text-center mt-5 pb-5">西軍</h2>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./west/isida.jpg" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">石田三成</div>
+          <div class="soldiers-score">6000</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./west/ukita.png" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">宇喜多秀家</div>
+          <div class="soldiers-score">17000</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./west/kobayakawa.jpg" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">小早川秀秋</div>
+          <div class="soldiers-score">15600</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./west/mouri.png" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">毛利秀元</div>
+          <div class="soldiers-score">13000</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./west/tyousokabe.gif" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">長宗我部盛親</div>
+          <div class="soldiers-score">6600</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./west/konisi.png" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">小西行長</div>
+          <div class="soldiers-score">4000</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./west/kikkawa.png" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">吉川広家</div>
+          <div class="soldiers-score">3000</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./west/ootani.png" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">大谷吉継</div>
+          <div class="soldiers-score">1500</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./west/ogawa.jpg" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">小川祐忠</div>
+          <div class="soldiers-score">2100</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./west/annkokuji.jpg" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">安国寺恵瓊</div>
+          <div class="soldiers-score">1800</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./west/simadu.jpg" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">島津義弘</div>
+          <div class="soldiers-score">1600</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./west/nagatuka.png" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">長束正家</div>
+          <div class="soldiers-score">1500</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./west/wakisaka.png" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">脇阪安治</div>
+          <div class="soldiers-score">1000</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./west/hiraduka.jpg" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">平塚為広</div>
+          <div class="soldiers-score">900</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./west/konisi.png" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">木下頼継</div>
+          <div class="soldiers-score">800</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./west/kutiki.png" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">朽木元綱</div>
+          <div class="soldiers-score">600</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./west/akaza.jpg" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">赤座直保</div>
+          <div class="soldiers-score">600</div>
+        </div>
+      </div>
+
+
+    </div><!-- west-wrapper -->
+
+    <!--------------------------------------------- 東軍------------------------------------- -->
+    <div class="east-wrapper">
+      <h2 class="text-center mt-5 pb-5">東軍</h2>
+
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./east/tokugawa.png" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">徳川家康</div>
+          <div class="soldiers-score">30000</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./east/asano.png" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">浅野幸長</div>
+          <div class="soldiers-score">6500</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./east/hukusima.jpg" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">福島正則</div>
+          <div class="soldiers-score">6000</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./east/kuroda.jpg" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">黒田長政</div>
+          <div class="soldiers-score">5400</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./east/hosokawa.jpg" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">細川忠興</div>
+          <div class="soldiers-score">5000</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./east/horio.jpg" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">堀尾忠氏</div>
+          <div class="soldiers-score">5100</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./east/ikeda.png" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">池田輝政</div>
+          <div class="soldiers-score">4500</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./east/nakamura.gif" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">中村勝忠</div>
+          <div class="soldiers-score">4500</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./east/ii.png" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">井伊直政</div>
+          <div class="soldiers-score">3600</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./east/katouyosiakira.png" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">加藤義明</div>
+          <div class="soldiers-score">3000</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./east/matudaira.png" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">松平忠吉</div>
+          <div class="soldiers-score">3000</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./east/tanaka.jpg" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">田中吉政</div>
+          <div class="soldiers-score">3000</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./east/kyougoku.jpg" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">京極高知</div>
+          <div class="soldiers-score">3000</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./east/honnda.png" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">本田忠勝</div>
+          <div class="soldiers-score">500</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./east/tutui.png" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">筒井定次</div>
+          <div class="soldiers-score">2800</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./east/toudou.png" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">藤堂高虎</div>
+          <div class="soldiers-score">2500</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./east/terasawa.png" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">寺沢広高</div>
+          <div class="soldiers-score">2400</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./east/yamauti.jpg" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">山内一豊</div>
+          <div class="soldiers-score">2000</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./east/ikoma.jpg" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">生駒一正</div>
+          <div class="soldiers-score">1800</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./east/kanamori.jpg" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">金森長近</div>
+          <div class="soldiers-score">1100</div>
+        </div>
+      </div>
+
+      <div class="legion-card">
+        <div class="legion-image">
+          <img src="./east/huruda.jpg" width="60px" alt="">
+        </div>
+        <div class="legion-content">
+          <div class="soldirers-name">古田重勝</div>
+          <div class="soldiers-score">1100</div>
+        </div>
+      </div>
+
+    </div><!-- east-wrapper -->
+  </div><!-- container -->
+
+
+  <!-- 引用元：https://rekijin.com/?p=17139 -->
+
+  <footer class="text-center pt-3 pb-3 mt-5">
+    <small>Copyright © 徳川式電脳算術機</small>
+  </footer>
+  <script>
+    $(window).on('load', function () {
+      $('.modal').modal('show');
+    });
+  </script>
+</body>
+
+</html>
